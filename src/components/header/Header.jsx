@@ -1,15 +1,20 @@
-import styled from '@emotion/styled';
-
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: pink;
-`;
+import logoBlack from '@assets/logos/logo-black.png';
+import { Container, Logo, LogoImg, NavWrap } from './Header.styles';
+import HeaderIcon from './HeaderIcon';
+import HeaderMenu from './HeaderMenu';
+import HeaderSearch from './HeaderSearch';
 
 function Header() {
   return (
     <Container>
-      <div>Header</div>
+      <Logo to="/">
+        <LogoImg src={logoBlack} alt="logo" />
+      </Logo>
+      <HeaderSearch />
+      <NavWrap>
+        <HeaderMenu />
+        <HeaderIcon />
+      </NavWrap>
     </Container>
   );
 }
