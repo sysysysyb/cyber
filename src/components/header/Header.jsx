@@ -2,20 +2,20 @@ import logoBlack from '@assets/logos/logo-black.png';
 import HeaderIcon from './HeaderIcon';
 import HeaderMenu from './HeaderMenu';
 import HeaderSearch from './HeaderSearch';
-import { Container, Logo, LogoImg, NavWrap } from './styles';
+import * as S from './styles';
 
 function Header() {
   return (
-    <Container>
-      <Logo to="/">
-        <LogoImg src={logoBlack} alt="logo" />
-      </Logo>
+    <S.Container>
+      <S.Logo to="/">
+        <S.LogoImg src={logoBlack} alt="logo" />
+      </S.Logo>
       <HeaderSearch />
-      <NavWrap>
+      <S.NavWrap>
         <HeaderMenu />
         <HeaderIcon />
-      </NavWrap>
-    </Container>
+      </S.NavWrap>
+    </S.Container>
   );
 }
 
