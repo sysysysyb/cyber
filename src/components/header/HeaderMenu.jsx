@@ -1,4 +1,4 @@
-import { MainNav, MainNavItem } from './Header.styles';
+import { MainNav, MainNavItem } from './styles';
 
 function HeaderMenu() {
   return (

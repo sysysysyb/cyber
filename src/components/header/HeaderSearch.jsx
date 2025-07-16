@@ -1,4 +1,4 @@
-import { SearchInput, SearchWrap, StyledSearchIcon } from './Header.styles';
+import { SearchInput, SearchWrap, StyledSearchIcon } from './styles';
 
 function HeaderSearch() {
   return (

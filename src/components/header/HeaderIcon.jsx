@@ -1,7 +1,7 @@
 import CartIcon from '@assets/icons/header/cart-icon.svg?react';
 import FavoritesIcon from '@assets/icons/header/favorites-icon.svg?react';
 import UserIcon from '@assets/icons/header/user-icon.svg?react';
-import { IconNav, IconNavItem } from './Header.styles';
+import { IconNav, IconNavItem } from './styles';
 
 function HeaderIcon() {
   return (

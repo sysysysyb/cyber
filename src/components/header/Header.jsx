@@ -1,8 +1,8 @@
 import logoBlack from '@assets/logos/logo-black.png';
-import { Container, Logo, LogoImg, NavWrap } from './Header.styles';
 import HeaderIcon from './HeaderIcon';
 import HeaderMenu from './HeaderMenu';
 import HeaderSearch from './HeaderSearch';
+import { Container, Logo, LogoImg, NavWrap } from './styles';
 
 function Header() {
   return (
