@@ -3,7 +3,7 @@ import InstagramIcon from '@assets/icons/footer/instagram-icon.svg?react';
 import TiktokIcon from '@assets/icons/footer/tiktok-icon.svg?react';
 import TwitterIcon from '@assets/icons/footer/twitter-icon.svg?react';
 import logoWhite from '@assets/logos/logo-white.png';
-import * as S from './Footer.styles';
+import * as S from './styles';
 
 function Footer() {
   return (

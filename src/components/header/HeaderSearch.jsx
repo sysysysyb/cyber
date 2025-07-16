@@ -1,11 +1,11 @@
-import { SearchInput, SearchWrap, StyledSearchIcon } from './Header.styles';
+import * as S from './styles';
 
 function HeaderSearch() {
   return (
-    <SearchWrap>
-      <StyledSearchIcon />
-      <SearchInput type="text" placeholder="Search" />
-    </SearchWrap>
+    <S.SearchWrap>
+      <S.StyledSearchIcon />
+      <S.SearchInput type="text" placeholder="Search" />
+    </S.SearchWrap>
   );
 }
 
