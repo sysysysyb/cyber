@@ -1,4 +1,4 @@
-import SearchIcon from '@assets/icons/search-icon.svg?react';
+import SearchIcon from '@assets/icons/header/search-icon.svg?react';
 import styled from '@emotion/styled';
 import { Link, NavLink } from 'react-router';
 
