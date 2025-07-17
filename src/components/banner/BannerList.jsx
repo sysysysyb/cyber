@@ -1,18 +1,12 @@
 import Banner from '@/components/banner/Banner';
 import { useBanners } from '@/hooks/useBanners';
-import styled from '@emotion/styled';
 
-const BannerGridContainer = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
-function BannerGrid() {
+function BannerList() {
   const { banners } = useBanners(PRODUCT_IDS);
   console.log(banners);
 
   return (
-    <BannerGridContainer>
+    <div>
       {banners.map((banner, idx) => (
         <Banner
           key={banner.id}
@@ -21,7 +15,7 @@ function BannerGrid() {
           align={idx % 2 ? 'right' : 'left'}
         />
       ))}
-    </BannerGridContainer>
+    </div>
   );
 }
 
@@ -47,4 +41,4 @@ const BANNER_THEMES = [
   },
 ];
 
-export default BannerGrid;
+export default BannerList;
