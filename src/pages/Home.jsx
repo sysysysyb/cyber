@@ -1,3 +1,4 @@
+import BannerList from '@/components/banner/BannerList';
 import styled from '@emotion/styled';
 
 const Container = styled.div`
@@ -9,7 +10,8 @@ const Container = styled.div`
 function Home() {
   return (
     <Container>
-      <div>Home</div>
+      {/* <div>Home</div> */}
+      <BannerList />
     </Container>
   );
 }
