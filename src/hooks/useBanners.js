@@ -13,19 +13,14 @@ export function useBanners(ids) {
       const loaded = results
         .filter((r) => r.status === 'fulfilled')
         .map((r) => {
-          const {
-            id,
-            title,
-            description,
-            images: [, , image],
-          } = r.value;
+          const { id, title, description, images } = r.value;
           const words = title.split(' ');
           return {
             id,
             titlePrefix: words.slice(0, -1).join(' '),
             titleLast: words.slice(-1),
-            desc: description,
-            image,
+            desc: description.split(',')[0] || description,
+            image: images?.at(-1),
           };
         });
       setBanners(loaded);
