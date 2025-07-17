@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router';
 
 export const ShopNowBtnContainer = styled.div`
+  width: fit-content;
   padding: 1rem 3.5rem;
   border: 1px solid ${(props) => props.theme.textColor || '#000'};
   color: ${(props) => props.theme.textColor || '#000'};
