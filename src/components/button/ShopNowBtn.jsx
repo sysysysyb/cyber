@@ -1,10 +1,10 @@
-import { ShopNowBtnContainer, ShopNowBtnLink } from './styles';
+import * as S from './styles';
 
 function ShopNowBtn({ path, theme }) {
   return (
-    <ShopNowBtnLink to={path}>
-      <ShopNowBtnContainer theme={theme}>Shop Now</ShopNowBtnContainer>
-    </ShopNowBtnLink>
+    <S.ShopNowBtnLink to={path}>
+      <S.ShopNowBtnContainer theme={theme}>Shop Now</S.ShopNowBtnContainer>
+    </S.ShopNowBtnLink>
   );
 }
 

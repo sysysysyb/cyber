@@ -1,24 +1,24 @@
 import ShopNowBtn from '../button/ShopNowBtn';
-import { BannerContainer, BannerDesc, BannerGroup, BannerImage, BannerTitle } from './styles';
+import * as S from './styles';
 
 function Banner({ banner, theme, align }) {
   console.log(theme);
   return (
-    <BannerContainer theme={theme} align={align}>
-      <BannerGroup align={align}>
-        <BannerTitle theme={theme}>
+    <S.BannerContainer theme={theme} align={align}>
+      <S.BannerGroup align={align}>
+        <S.BannerTitle theme={theme}>
           {banner?.titlePrefix}&nbsp;
           <b>{banner?.titleLast}</b>
-        </BannerTitle>
-        <BannerDesc>{banner?.desc}</BannerDesc>
+        </S.BannerTitle>
+        <S.BannerDesc>{banner?.desc}</S.BannerDesc>
         <ShopNowBtn path={`/productions/${banner?.id}`} theme={theme} />
-      </BannerGroup>
-      <BannerImage
+      </S.BannerGroup>
+      <S.BannerImage
         src={banner?.image}
         alt={banner?.titlePrefix + banner?.titleLast}
         align={align}
       />
-    </BannerContainer>
+    </S.BannerContainer>
   );
 }
 
