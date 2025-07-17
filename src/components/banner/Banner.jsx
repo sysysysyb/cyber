@@ -1,31 +1,34 @@
-import { useBanners } from '@/hooks/useBanner';
 import styled from '@emotion/styled';
+import ShopNowBtn from '../button/ShopNowBtn';
 
 const BannerContainer = styled.div`
   position: relative;
   overflow: hidden;
   display: flex;
-  flex-direction: row; // props -> row 또는 row-reverse & mobile일 때는 column 또는 column reverse
+  justify-content: ${(props) => props.align === 'right' && 'flex-end'}; // props
   align-items: center;
   width: 100%;
   height: 600px;
   padding: 10%;
-  background-color: #211c24; // props
+  background-color: ${(props) => props.theme.bgColor || '#fff'};
 `;
 
 const BannerGroup = styled.div`
-  flex-basis: 55%;
   z-index: 10;
   display: flex;
   flex-direction: column;
+  align-items: ${(props) => props.align === 'right' && 'flex-end'}; // props
   gap: 1.5rem;
+  width: fit-content;
+  max-width: 66%;
+  text-align: ${(props) => props.align === 'right' && 'right'}; // props
 `;
 
 const BannerTitle = styled.h1`
   margin: 0;
-  font-size: 6rem; // props
+  font-size: 6rem;
   font-weight: 100;
-  color: #fff; // props
+  color: ${(props) => props.theme.textColor || '#000'};
 
   & > b {
     font-weight: 600;
@@ -33,7 +36,7 @@ const BannerTitle = styled.h1`
 `;
 
 const BannerDesc = styled.span`
-  font-size: 1.125rem; // props - 기본을 14px로
+  font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.5rem;
   color: #909090;
@@ -42,25 +45,26 @@ const BannerDesc = styled.span`
 const BannerImage = styled.img`
   position: absolute;
   height: 100%;
-  right: 0;
+  ${(props) => (props.align === 'right' ? 'left' : 'right')}: 0; // props
 `;
 
-const productIds = [123, 122, 121];
-
-function Banner() {
-  const { banners } = useBanners(productIds);
-
+function Banner({ banner, theme, align }) {
+  console.log(theme);
   return (
-    <BannerContainer>
-      <BannerGroup>
-        <BannerTitle>
-          {banners[0]?.titlePrefix}&nbsp;
-          <b>{banners[0]?.titleLast}</b>
+    <BannerContainer theme={theme} align={align}>
+      <BannerGroup align={align}>
+        <BannerTitle theme={theme}>
+          {banner?.titlePrefix}&nbsp;
+          <b>{banner?.titleLast}</b>
         </BannerTitle>
-        <BannerDesc>{banners[0]?.desc}</BannerDesc>
-        <button>Shop Now</button>
+        <BannerDesc>{banner?.desc}</BannerDesc>
+        <ShopNowBtn path={`/productions/${banner?.id}`} theme={theme} />
       </BannerGroup>
-      <BannerImage src={banners[0]?.image} alt={banners[0]?.title} />
+      <BannerImage
+        src={banner?.image}
+        alt={banner?.titlePrefix + banner?.titleLast}
+        align={align}
+      />
     </BannerContainer>
   );
 }
