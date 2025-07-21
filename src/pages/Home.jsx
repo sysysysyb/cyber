@@ -1,4 +1,5 @@
 import BannerList from '@/components/banner/BannerList';
+import Category from '@/components/category/Category';
 import styled from '@emotion/styled';
 
 const Container = styled.div`
@@ -12,6 +13,7 @@ function Home() {
     <Container>
       {/* <div>Home</div> */}
       <BannerList />
+      <Category />
     </Container>
   );
 }
