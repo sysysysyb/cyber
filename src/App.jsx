@@ -8,7 +8,8 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="productions/:id" element={<div>product 페이지</div>} />
+          <Route path="products/:id" element={<div>product 페이지</div>} />
+          <Route path="category/:id" element={<div>category 페이지</div>} />
         </Route>
       </Routes>
     </BrowserRouter>
