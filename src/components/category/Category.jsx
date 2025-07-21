@@ -1,49 +1,25 @@
-import styled from '@emotion/styled';
 import { motion } from 'motion/react';
 import CategoryItem from './CategoryItem';
-
-export const CategoryContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2rem;
-  width: 100%;
-  padding: 5rem 10rem;
-  background-color: #fafafa;
-`;
-
-export const CategoryTitle = styled.h2`
-  font-size: 1.5rem;
-  font-weight: 500;
-`;
-
-export const CategoryGroup = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-  width: 100%;
-  height: fit-content;
-`;
+import * as S from './styles';
 
 function Category() {
   return (
-    <CategoryContainer
+    <S.CategoryContainer
       as={motion.div}
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
     >
-      <CategoryTitle as={motion.h2} variants={itemVariants}>
+      <S.CategoryTitle as={motion.h2} variants={itemVariants}>
         Browse By Category
-      </CategoryTitle>
-      <CategoryGroup as={motion.div} variants={itemVariants}>
+      </S.CategoryTitle>
+      <S.CategoryGroup as={motion.div} variants={itemVariants}>
         {CATEGORY_LIST.map((category) => (
           <CategoryItem key={category.id} category={category} />
         ))}
-      </CategoryGroup>
-    </CategoryContainer>
+      </S.CategoryGroup>
+    </S.CategoryContainer>
   );
 }
 
