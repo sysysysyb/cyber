@@ -15,6 +15,14 @@ export const CategoryItemContainer = styled.button`
   aspect-ratio: 4/3;
   border-radius: 1rem;
   cursor: pointer;
+  transition: 0.3s ease-out;
+
+  &:hover {
+    border: 2px solid #000;
+    background-color: transparent;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 5px #00000025;
+  }
 `;
 
 export const CategoryItemText = styled.span`
